@@ -7,7 +7,7 @@ class Pyrdle:
     def __init__(self):
         """init the game, give instructions for user inputs"""
         print("Hello, and welcome to pyrdle! This is a coding excercise based on wordle.")
-        print("The rules are simple, you will be prompted for a guess, each guess is a word with five letters")
+        print("The rules are simple, you will be prompted for a guess, each guess must be a word with five letters")
         print("You are trying to figure out the secret word, which is a randomly selected five letter word")
         print("You will then get an indicator if each letter from your guess is in the secret word")
         print("You will also get an indicator if the letter is in the same location")
@@ -19,6 +19,7 @@ class Pyrdle:
         self.no_dupes_the_word = []
         self.found_letters = ['', '', '', '', '',]
         self.game_running = True
+        self.guesses = 0
 
     def run_game(self):
         """run the game"""
@@ -30,7 +31,7 @@ class Pyrdle:
     def check_guess(self):
         """compare guess to the word, then compare letters in guess to letters in the word"""
         if self.last_guess == self.the_word:
-            print(f"Congrats, you guessed the word, {self.the_word}")
+            print(f"Congrats, you guessed the word, {self.the_word} in {self.guesses} guesses!")
             self.game_running = False
         for x in range(5):
             if self.last_guess[x] == self.the_word[x]:
@@ -47,6 +48,7 @@ class Pyrdle:
         guess = guess.lower()
         if guess.lower() in self.word_list:
             self.last_guess = guess
+            self.guesses += 1
         else:
             print("That guess won't work!")
             self.user_guess()
