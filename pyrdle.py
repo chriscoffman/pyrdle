@@ -59,8 +59,7 @@ class Pyrdle:
         for l in self.the_word:
             no_dupes.add(l)
         self.no_dupes_the_word = no_dupes
-        print(self.the_word)
-
+        
 if __name__ == '__main__': 
     pd = Pyrdle()
     pd.run_game()
