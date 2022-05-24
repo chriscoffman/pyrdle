@@ -8,8 +8,11 @@ class Pyrdle:
         """init the game, give instructions for user inputs"""
         print("Hello, and welcome to pyrdle! This is a coding excercise based on wordle.")
         print("The rules are simple, you will be prompted for a guess, each guess is a word with five letters")
+        print("You are trying to figure out the secret word, which is a randomly selected five letter word")
         print("You will then get an indicator if each letter from your guess is in the secret word")
-        print("you will also get an indicator if the letter is in the same location")
+        print("You will also get an indicator if the letter is in the same location")
+        print("If the letter is in the word but not in the right place, it will be lowercase")
+        print("If the letters in the word and in the right place, it will be uppercase")
         self.word_list = []
         self.last_guess = ''
         self.the_word= ''
