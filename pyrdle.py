@@ -14,13 +14,30 @@ class Pyrdle:
         self.last_guess = ''
         self.the_word= ''
         self.no_dupes_the_word = []
+        self.found_letters = ['', '', '', '', '',]
+        self.game_running = True
 
     def run_game(self):
         """run the game"""
         self.choose_the_word()
-        while True:
+        while self.game_running:
             self.user_guess()
-            break
+            self.check_guess()
+
+    def check_guess(self):
+        """compare guess to the word, then compare letters in guess to letters in the word"""
+        if self.last_guess == self.the_word:
+            print(f"Congrats, you guessed the word, {self.the_word}")
+            self.game_running = False
+        for x in range(5):
+            if self.last_guess[x] == self.the_word[x]:
+                self.found_letters[x] = self.last_guess[x].upper()
+            elif self.last_guess[x] in self.the_word:
+                self.found_letters[x] = self.last_guess[x].lower()
+            else:
+                self.found_letters[x] = ''
+        print(self.found_letters)
+        
     def user_guess(self):
         """takes user input for guess, makes sure it is a word"""
         guess = input("Type your guess, it must be a five letter word: ")
@@ -43,6 +60,7 @@ class Pyrdle:
             no_dupes.add(l)
         self.no_dupes_the_word = no_dupes
         print(self.the_word)
+
 if __name__ == '__main__': 
     pd = Pyrdle()
     pd.run_game()
