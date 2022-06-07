@@ -7,11 +7,11 @@ Once the user guesses the secret word, they will be informed how many guesses it
 This project is also being used as practice for using github for version control.
 
 How to install and run:
-pyrdle should work on any device with python3 installed, and will simply run in the terminal
+pyrdle should work on any device with python3 installed, and will simply run in the terminal.
 
 #future todo
-add a way to detect if a guess had multiple letters, and if that will cause confusion with the feedback the user recieves
-Look into different ways to display if a letter is in the secret word or not
+add a way to detect if a guess had multiple letters, and if that will cause confusion with the feedback the user recieves.
+Look into different ways to display if a letter is in the secret word or not.
 consider changing how pyrdle is run, consider moving it out of the terminal to a webpage or gui.
 
 
